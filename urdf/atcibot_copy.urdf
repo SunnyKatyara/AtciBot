@@ -1,0 +1,838 @@
+<?xml version="1.0"?>
+<robot name="atcibot">
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/atcibot</robotNamespace>
+        </plugin>
+    </gazebo>
+    <link name="base">
+        <inertial>
+            <origin xyz="0 0 0.048" rpy="0 0 -1.5708"/>
+            <mass value="40" />
+            <inertia ixx="2.71402" ixy="0.0" ixz="0.0" iyy="2.8856" iyz="0.0" izz="2.5725"/>
+        </inertial>
+        <collision>
+            <origin rpy="0 0 -1.5708" xyz="0.0 0.0 0.048"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/now_base.dae" scale="0.025 0.025 0.025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0 0 -1.5708" xyz="0.0 0.0 0.048"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/now_base.dae" scale="0.025 0.025 0.025"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="bin1_joint" type="fixed">
+        <origin xyz="-0.08 0.00 0.287" rpy="0.0 0.0 -1.5708"/>
+        <parent link="base"/>
+        <child  link="bin1"/>
+    </joint>
+    
+    <link name="bin1">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.2" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_bin.dae" scale="0.025 0.032 0.025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_bin.dae" scale="0.025 0.032 0.025"/>
+	      </geometry>
+	    </visual>
+	    <material name="red">
+	      <color rgba="0.0 1.0 0 1.0"/>
+	    </material>
+    </link>
+    
+    <joint name="bin2_joint" type="fixed">
+        <origin xyz="-0.08 -0.14 0.287" rpy="0.0 0.0 -1.5708"/>
+        <parent link="base"/>
+        <child  link="bin2"/>
+    </joint>
+    
+    <link name="bin2">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.2" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_bin.dae" scale="0.025 0.032 0.025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_bin.dae" scale="0.025 0.032 0.025"/>
+	      </geometry>
+	    </visual>
+	    <material name="red">
+	      <color rgba="0.0 0.0 1.0 1.0"/>
+	    </material>
+    </link>
+    
+    <joint name="bin3_joint" type="fixed">
+        <origin xyz="-0.08 -0.28 0.287" rpy="0.0 0.0 -1.5708"/>
+        <parent link="base"/>
+        <child  link="bin3"/>
+    </joint>
+    
+    <link name="bin3">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.2" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_bin.dae" scale="0.025 0.032 0.025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_bin.dae" scale="0.025 0.032 0.025"/>
+	      </geometry>
+	    </visual>
+	    <material name="red">
+	      <color rgba="1.0.0 0.0 0.0 1.0"/>
+	    </material>
+    </link>
+    
+    <joint name="box_joint" type="fixed">
+        <origin xyz="-0.3 -0.0 0.289" rpy="0.0 0.0 -1.5708"/>
+        <parent link="base"/>
+        <child  link="box"/>
+    </joint>
+    
+    <link name="box">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.2" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/box.dae" scale="0.025 0.025 0.025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/box.dae" scale="0.025 0.025 0.025"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="brush_joint" type="continuous">
+        <origin xyz="-0.57 -0.17 0.04" rpy="0.0 0.0 -1.5708"/>
+        <parent link="base"/>
+        <child  link="brush"/>
+        <limit effort="2000" lower="-1.6" upper="0.0" velocity="20.0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+    
+    <link name="brush">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.01" />
+            <inertia ixx="0.0003" ixy="0.0" ixz="0.0" iyy="0.0003" iyz="0.0" izz="0.0003"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/brush.stl" scale="0.03 0.03 0.03"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/brush.stl" scale="0.03 0.03 0.03"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="brush2_joint" type="continuous">
+        <origin xyz="-0.57 0.175 0.04" rpy="0.0 0.0 -1.5708"/>
+        <parent link="base"/>
+        <child  link="brush2"/>
+        <limit effort="2000" lower="-1.6" upper="0.0" velocity="20.0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+    
+    <link name="brush2">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.01" />
+            <inertia ixx="0.0003" ixy="0.0" ixz="0.0" iyy="0.0003" iyz="0.0" izz="0.0003"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/brush.stl" scale="0.03 0.03 0.03"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/brush.stl" scale="0.03 0.03 0.03"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="logo" type="fixed">
+        <origin xyz="0.305 0.0 0.32" rpy="0.0 0.0 -1.5708"/>
+        <parent link="base"/>
+        <child  link="logo"/>
+    </joint>
+    
+    <link name="logo">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.001" />
+            <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/logo.stl" scale="0.025 0.025 0.025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/logo.stl" scale="0.025 0.025 0.025"/>
+	      </geometry>
+	    </visual>
+    </link>
+
+    <joint name="jointer" type="revolute">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base"/>
+        <child  link="first_joint"/>
+        <limit effort="2000" lower="-0.7854" upper="0.7854" velocity="20.0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+    
+    <link name="first_joint">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+            <mass value="0.5" />
+            <inertia ixx="0.003" ixy="0.0" ixz="0.0" iyy="0.003" iyz="0.0" izz="0.003"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 1.5708" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_jointy.stl" scale="0.025 0.025 0.025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 1.5708" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_jointy.stl" scale="0.025 0.025 0.025"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="handler" type="revolute">
+        <origin xyz="0.0409 -0.002 0.0738" rpy="0 0 0"/>
+        <parent link="first_joint"/>
+        <child  link="second_joint"/>
+        <limit effort="2000" lower="-2.36" upper="0.7854" velocity="20.0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    
+    <link name="second_joint">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 -1.5708"/>
+            <mass value="0.5" />
+            <inertia ixx="0.003" ixy="0.0" ixz="0.0" iyy="0.003" iyz="0.0" izz="0.003"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 -1.5708" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_handys.stl" scale="0.025 0.025 0.025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 -1.5708" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_handys.stl" scale="0.025 0.025 0.025"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="slider" type="prismatic">
+        <origin xyz="0.5633 0.066 0.2266" rpy="0 -0.7854 0.0"/>
+        <parent link="second_joint"/>
+        <child  link="third_joint"/>
+        <limit effort="2000" lower="-1.43" upper="0.0" velocity="20.0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    
+    <link name="third_joint">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="0.003" ixy="0.0" ixz="0.0" iyy="0.003" iyz="0.0" izz="0.003"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_slider.stl" scale="0.027 0.023 0.025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/new_slider.stl" scale="0.027 0.023 0.025"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="slider2" type="prismatic">
+        <origin xyz="0.679 0.135 0.101" rpy="0 -0.7854 0.0"/>
+        <parent link="second_joint"/>
+        <child  link="fourth_joint"/>
+        <limit effort="2000" lower="-1.43" upper="0.0" velocity="20.0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    
+    <link name="fourth_joint">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="0.003" ixy="0.0" ixz="0.0" iyy="0.003" iyz="0.0" izz="0.003"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/slide.stl" scale="0.027 0.023 0.025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/slide.stl" scale="0.027 0.023 0.025"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    
+    <joint name="laser" type="fixed">
+        <origin xyz="0.645 -0.0 0.275" rpy="1.5708 0 -3.1416"/>
+        <parent link="base"/>
+        <child  link="laser"/>
+    </joint>
+    
+    <link name="laser">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/SICK-S300.dae" scale="0.0008 0.0008 0.0008"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/SICK-S300.dae" scale="0.0008 0.0008 0.0008"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="sonar" type="fixed">
+        <origin xyz="0.61 -0.0 0.095" rpy="1.5708 0 1.5708"/>
+        <parent link="base"/>
+        <child  link="sonar"/>
+    </joint>
+    
+    <link name="sonar">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/sonar.dae" scale="0.0025 0.0025 0.0025"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/sonar.dae" scale="0.0025 0.0025 0.0025"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="camera" type="fixed">
+        <origin xyz="-0.373 0.18 0.86" rpy="0 0 0.0"/>
+        <parent link="base"/>
+        <child  link="camera"/>
+    </joint>
+    
+    <link name="camera">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="5.8083e-4" ixy="0.0" ixz="0.0" iyy="3.0833e-5" iyz="0.0" izz="5.9083e-4"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/asus_xtion.dae" scale="1 1 1"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/asus_xtion.dae" scale="1 1 1"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="wheel1_joint" type="fixed">
+        <origin xyz="0.4300 0.34000 0.13300" rpy="0.0 0.0 1.5708"/>
+        <parent link="base"/>
+        <child  link="fore_wheel1"/>
+        <dynamics damping="1.1"/>
+        <dynamics friction="0.9"/>
+        <axis xyz="1 1 1"/>
+    </joint>
+    
+    <link name="fore_wheel1">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="2.2" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/wheel.dae" scale="0.045 0.045 0.045"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/wheel.dae" scale="0.045 0.045 0.045"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="wheel2_joint" type="fixed">
+        <origin xyz="0.4300 -0.34300 0.13300" rpy="0.0 0.0 -1.5708"/>
+        <parent link="base"/>
+        <child  link="fore_wheel2"/>
+        <dynamics damping="1.1"/>
+        <dynamics friction="0.9"/>
+        <axis xyz="1 1 1"/>
+    </joint>
+    
+    <link name="fore_wheel2">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="2.2" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/wheel.dae" scale="0.045 0.045 0.045"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/wheel.dae" scale="0.045 0.045 0.045"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="wheel3_joint" type="fixed">
+        <origin xyz="-0.4300 -0.34300 0.13300" rpy="0.0 0.0 -1.5708"/>
+        <parent link="base"/>
+        <child  link="fore_wheel3"/>
+        <dynamics damping="1.1"/>
+        <dynamics friction="0.9"/>
+        <axis xyz="1 1 1"/>
+    </joint>
+    
+    <link name="fore_wheel3">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="2.2" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/wheel.dae" scale="0.045 0.045 0.045"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/wheel.dae" scale="0.045 0.045 0.045"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="wheel4_joint" type="fixed">
+        <origin xyz="-0.4300 0.34300 0.13300" rpy="0.0 0.0 -1.5708"/>
+        <parent link="base"/>
+        <child  link="fore_wheel4"/>
+        <dynamics damping="1.1"/>
+        <dynamics friction="0.9"/>
+        <axis xyz="1 1 1"/>
+    </joint>
+    
+    <link name="fore_wheel4">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="2.2" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/wheel.dae" scale="0.045 0.045 0.045"/>
+	      </geometry>
+        </collision>
+	    <visual>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	      <geometry>
+	        <mesh filename="package://AtciBot/robot_description/meshes/wheel.dae" scale="0.045 0.045 0.045"/>
+	      </geometry>
+	    </visual>
+    </link>
+    
+ 
+    <gazebo reference="base">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+    </gazebo>
+    <gazebo reference="bin1">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="bin2">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="bin3">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="box">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="laser">
+      <material value="Gazebo/Yellow"/>
+      <sensor type="ray" name="laser">
+          <pose>0 0 0 0 0 0</pose>
+          <visualize>false</visualize>
+          <update_rate>40</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>720</samples>
+                <resolution>1</resolution>
+                <min_angle>-2.35619</min_angle>
+                <max_angle>2.35619</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>0.10</min>
+              <max>30.0</max>
+              <resolution>0.05</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <!-- Noise parameters based on published spec for Hokuyo laser
+                   achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+                   stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+                   reading. -->
+              <mean>0.0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name="laser" filename="libgazebo_ros_laser.so">
+            <topicName>sick_laser/scan</topicName>
+            <frameName>laser</frameName>
+          </plugin>
+        </sensor>
+  </gazebo>
+  
+    <gazebo reference="brush">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Orange</material>
+    </gazebo>
+    <gazebo reference="brush2">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Orange</material>
+    </gazebo>
+    <gazebo reference="first_joint">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Indigo</material>
+    </gazebo>
+    <gazebo reference="second_joint">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Indigo</material>
+    </gazebo>
+    <gazebo reference="third_joint">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Motorway</material>
+    </gazebo>
+    <gazebo reference="fourth_joint">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Motorway</material>
+    </gazebo>
+    <gazebo reference="logo">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="camera">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+    </gazebo>
+    
+    <gazebo reference="camera">
+  <sensor name="camera" type="depth">
+    <update_rate>20</update_rate>
+    <camera>
+      <horizontal_fov>1.047198</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.05</near>
+        <far>3</far>
+      </clip>
+    </camera>
+    <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+      <baseline>0.2</baseline>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1.0</updateRate>
+      <cameraName>camera_ir</cameraName>
+      <imageTopicName>/camera/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
+      <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+      <depthImageInfoTopicName>/camera/depth/camera_info</depthImageInfoTopicName>
+      <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+      <frameName>camera</frameName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+      <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+      <distortionK1>0.00000001</distortionK1>
+      <distortionK2>0.00000001</distortionK2>
+      <distortionK3>0.00000001</distortionK3>
+      <distortionT1>0.00000001</distortionT1>
+      <distortionT2>0.00000001</distortionT2>
+      <CxPrime>0</CxPrime>
+      <Cx>0</Cx>
+      <Cy>0</Cy>
+      <focalLength>0</focalLength>
+      <hackBaseline>0</hackBaseline>
+    </plugin>
+  </sensor>
+</gazebo>
+    
+    <gazebo reference="sonar">        
+     <sensor type="ray" name="sonar">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>50</update_rate>
+      <ray>
+         <scan>
+            <horizontal>
+               <samples>10</samples>
+               <resolution>1</resolution> 
+               <min_angle>-0.14835</min_angle>
+               <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+               <samples>10</samples>
+               <resolution>1</resolution> 
+               <min_angle>-0.14835</min_angle>
+               <max_angle>0.14835</max_angle> 
+            </vertical>
+         </scan>
+         <range>
+            <min>0.01</min>
+            <max>2</max>
+            <resolution>0.02</resolution>
+         </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+         <gaussianNoise>0.005</gaussianNoise>
+         <alwaysOn>true</alwaysOn>
+         <updateRate>50</updateRate>
+         <topicName>/sonar/topic</topicName>
+         <frameName>sonar</frameName>
+         <radiation>INFRARED</radiation>
+         <fov>0.2967</fov>
+      </plugin>
+    </sensor>  
+   </gazebo>
+   
+    <gazebo reference="fore_wheel1">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+    </gazebo>
+    <gazebo reference="fore_wheel2">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+    </gazebo>
+    <gazebo reference="fore_wheel3">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+    </gazebo>
+    <gazebo reference="fore_wheel4">
+        <kp>1000.0</kp>
+        <kd>1000.0</kd>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+    </gazebo>
+    
+    <gazebo>
+    <plugin name="atcibot_controller" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>base</robotBaseFrame>
+    </plugin>
+  </gazebo>
+  
+
+
+    <transmission name="brush_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="brush_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="brush_jointMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="brush2_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="brush2_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="brush2_jointMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="first_joint_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="jointer">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="first_joint_jointMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="second_joint_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="handler">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="second_joint_jointMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="third_joint_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="slider">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="third_joint_jointMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="fourth_joint_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="slider2">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="fourth_joint_jointMotor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+</robot>
+
+
