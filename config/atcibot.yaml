@@ -1,0 +1,10 @@
+atcibot:
+# Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: jointer
+    pid: {p: 12000.0, i: 0.0, d: 50.0}
+
